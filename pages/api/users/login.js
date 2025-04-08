@@ -1,6 +1,6 @@
 import nc from 'next-connect';
 import axios from 'axios';
-import { serialize } from 'cookie'; // don't forget this
+import { serialize } from 'js-cookie'; // don't forget this
 
 const handler = nc();
 
