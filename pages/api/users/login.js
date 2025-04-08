@@ -6,10 +6,10 @@ const handler = nc();
 
 handler.post(async (req, res) => {
   try {
-    const flaskBackendURL = process.env.FLASK_BACKEND_URL || 'http://34.42.157.189:5000';
+    const flaskBackendURL = process.env.FLASK_BACKEND_URL || 'http://industrious-miracle-production.up.railway.app';
     const { email, password } = req.body;
 
-    const response = await axios.post(`${flaskBackendURL}/auth/login`, { email, password }, { withCredentials: true });
+    const response = await axios.post(`${flaskBackendURL}/login`, { email, password }, { withCredentials: true });
 
     const { access_token, refresh_token } = response.data;
 
