@@ -1,6 +1,7 @@
 import nc from 'next-connect';
 import axios from 'axios';
-import { signToken, isAuth } from '../../../utils/auth';
+import cookie from 'js-cookie';
+import { isAuth } from '../../../utils/auth';
 
 const handler = nc();
 handler.use(isAuth);

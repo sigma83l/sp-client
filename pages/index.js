@@ -12,14 +12,9 @@ import { Store } from '../utils/Store';
 import ProductItem from '../components/ProductItem';
 import Carousel from 'react-material-ui-carousel';
 import useStyles from '../utils/styles';
-import Icard from '../components/IndexCard'
 import styles from '../styles/Home.module.css';
 import Button from '../components/button';
-import { getError } from '../utils/error';
-import Cookies from 'js-cookie';
 import { useState } from 'react';
-import { useSnackbar } from 'notistack';
-import { useEffect } from 'react';
 import { FaShippingFast } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import { FaHeadset } from "react-icons/fa";
@@ -44,10 +39,7 @@ export default function Home(props) {
   };
 
 
-    const [query, setQuery] = useState('');
-    const queryChangeHandler = (e) => {
-      setQuery(e.target.value);
-    };
+    const [query, ] = useState('');
   const submitHandler = (e) => {
     e.preventDefault();
     router.push(`/search?query=${query}`);
@@ -227,7 +219,7 @@ export default function Home(props) {
            Why Choose Us
           </h2> 
             At 
-            SENOC POINT OF SALE MARKETING, we specialize in providing top-quality used heavy equipment machinery to meet the diverse needs of industries across the Philippines. From construction and agriculture to landscaping and more, we're dedicated to supplying reliable and efficient solutions to help you get the job done right.
+            SENOC POINT OF SALE MARKETING, we specialize in providing top-quality used heavy equipment machinery to meet the diverse needs of industries across the Philippines. From construction and agriculture to landscaping and more, we are dedicated to supplying reliable and efficient solutions to help you get the job done right.
             
             Quality Assurance: Our products undergo rigorous testing to ensure they meet the highest standards of durability and performance, giving you peace of mind with every purchase.
             
@@ -337,9 +329,10 @@ export default function Home(props) {
              </Typography>
             </Grid>  
       
-         {imagelist.images.map((image) => (
+         {imagelist.images.map((image,i) => (
 
               <Grid lg={2} md={3} sm={4} xs={6}
+              key={i}
               sx={{
                 justifyContent: "center",
                 alignItems: "center",
@@ -348,8 +341,9 @@ export default function Home(props) {
                       <div className={styles.square}>
                          <div className={styles.content}>
                            <img
+                           key="d"
+                             alt = "wf"
                              className={styles.transition}
-                             component="img"
                              src={image.productphoto}
                              // title={service.name}
                              style={{ 

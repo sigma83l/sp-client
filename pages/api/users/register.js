@@ -1,5 +1,6 @@
 import nc from 'next-connect';
 import axios from 'axios';
+import cookie from 'js-cookie';
 
 const handler = nc();
 

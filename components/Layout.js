@@ -1,20 +1,15 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
-import Mainbutt from './button';
-// import ButtonM from '../components/button'
 
 import Mytextfield from '../components/textfield'
 import {
-  AppBar,
-  Toolbar,
   Typography,
   Container,
   Link,
   createMuiTheme,
   ThemeProvider,
   CssBaseline,
-  Switch,
   Badge,
   // Button,
   Menu,
@@ -25,7 +20,6 @@ import {
   List,
   ListItem,
   Divider,
-  ListItemText,
   InputBase,
   Button
 } from '@material-ui/core';
@@ -46,7 +40,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 
-export default function Layout({ title, description, children }, props) {
+export default function Layout({ title, description, children }, ) {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { darkMode, cart, userInfo } = state;
@@ -83,7 +77,7 @@ export default function Layout({ title, description, children }, props) {
     setSidebarVisible(false);
   };
 
-  const [categories, setCategories] = useState([]);
+  const [, setCategories] = useState([]);
   const { enqueueSnackbar } = useSnackbar();
 
   const fetchCategories = async () => {
@@ -108,11 +102,11 @@ export default function Layout({ title, description, children }, props) {
     fetchCategories();
   }, []);
 
-  const darkModeChangeHandler = () => {
-    dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
-    const newDarkMode = !darkMode;
-    Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
-  };
+  // const darkModeChangeHandler = () => {
+  //   dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
+  //   const newDarkMode = !darkMode;
+  //   Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
+  // };
   const [anchorEl, setAnchorEl] = useState(null);
   const loginClickHandler = (e) => {
     setAnchorEl(e.currentTarget);

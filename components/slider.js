@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/Slider.module.css';
-
+import {Image} from "next/image";
 const images = [
   '/images/pants1.jpg',
   '/images/pants2.jpg',
@@ -39,7 +39,7 @@ const Slider = () => {
       <div className={styles.slider}>
         <div className={styles.slideWrapper} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {images.map((image, index) => (
-            <img key={index} src={image} alt={`Slide ${index + 1}`} className={styles.slideImage} />
+            <Image key={index} src={image} alt={`Slide ${index + 1}`} className={styles.slideImage} />
           ))}
         </div>
         <button className={styles.prevButton} onClick={prevSlide}>❮</button>
@@ -60,7 +60,7 @@ const Slider = () => {
       {/* Thumbnails */}
       <div className={styles.thumbnails}>
         {images.map((image, index) => (
-          <img
+          <Image
             key={index}
             src={image}
             alt={`Thumbnail ${index + 1}`}

@@ -20,7 +20,6 @@ import { Store } from '../utils/Store';
 import axios from 'axios';
 import Rating from '@material-ui/lab/Rating';
 import { Pagination } from '@material-ui/lab';
-import Collasping from '../components/collapsed'
 
 const PAGE_SIZE = 3;
 

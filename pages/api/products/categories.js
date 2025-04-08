@@ -1,5 +1,6 @@
 import nc from 'next-connect';
 import { isAuth, isAdmin } from '../../../utils/auth';
+import axios from 'axios';
 
 const handler = nc();
 

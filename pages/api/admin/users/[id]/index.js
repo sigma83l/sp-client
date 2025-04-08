@@ -33,7 +33,7 @@ handler.put(async (req, res) => {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const response = await axios.put(`${process.env.FLASK_BACKEND_URL}/users`, req.body, {
+    await axios.put(`${process.env.FLASK_BACKEND_URL}/users`, req.body, {
       headers: { Authorization: `Bearer ${access_token}` },
     });
 
@@ -52,7 +52,7 @@ handler.delete(async (req, res) => {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const response = await axios.delete(`${process.env.FLASK_BACKEND_URL}/users/${id}`, {
+    await axios.delete(`${process.env.FLASK_BACKEND_URL}/users/${id}`, {
       headers: { Authorization: `Bearer ${access_token}` },
     });
 

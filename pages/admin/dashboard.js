@@ -4,18 +4,13 @@ import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import React, { useEffect, useContext, useReducer } from 'react';
 import {
-  CircularProgress,
   Grid,
   List,
   ListItem,
   Typography,
   Card,
-  Button,
   ListItemText,
-  CardContent,
-  CardActions,
 } from '@material-ui/core';
-import { Bar } from 'react-chartjs-2';
 import { getError } from '../../utils/error';
 import { Store } from '../../utils/Store';
 import Layout from '../../components/Layout';
@@ -40,7 +35,7 @@ function AdminDashboard() {
   const classes = useStyles();
   const { userInfo } = state;
 
-  const [{ loading, error, summary }, dispatch] = useReducer(reducer, {
+  const [, dispatch] = useReducer(reducer, {
     loading: true,
     summary: { salesData: [] },
     error: '',
@@ -49,6 +44,7 @@ function AdminDashboard() {
   useEffect(() => {
     if (!userInfo) {
       router.push('/login');
+      return;
     }
     const fetchData = async () => {
       try {
@@ -62,7 +58,7 @@ function AdminDashboard() {
       }
     };
     fetchData();
-  }, []);
+  }, [router, userInfo]); // ✅ fixed
   return (
     <Layout title="Admin Dashboard">
       <Grid container spacing={1}>
