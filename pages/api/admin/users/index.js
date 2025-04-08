@@ -1,6 +1,6 @@
 import nc from 'next-connect';
 import axios from 'axios';
-import { parseCookies } from '../../../utils/cookies';  // Utility to parse cookies
+import { parseCookies } from '../../../../utils/cookies';  // Utility to parse cookies
 
 const handler = nc();
 
