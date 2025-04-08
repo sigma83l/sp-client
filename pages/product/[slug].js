@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useCallback } from 'react'; // Import useCallback
 import NextLink from 'next/link';
 import {
   Grid,
@@ -22,6 +22,7 @@ import { getError } from '../../utils/error';
 import { useRouter } from 'next/router';
 import { useSnackbar } from 'notistack';
 import Slider from '../../components/slider'
+
 export default function ProductScreen(props) {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
@@ -51,24 +52,25 @@ export default function ProductScreen(props) {
       );
       setLoading(false);
       enqueueSnackbar('Review submitted successfully', { variant: 'success' });
-      fetchReviews();
+      fetchReviews(); // Call fetchReviews after submitting review
     } catch (err) {
       setLoading(false);
       enqueueSnackbar(getError(err), { variant: 'error' });
     }
   };
 
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => { // Wrap fetchReviews with useCallback
     try {
       const { data } = await axios.get(`/api/products/${product._id}/reviews`);
       setReviews(data);
     } catch (err) {
       enqueueSnackbar(getError(err), { variant: 'error' });
     }
-  };
+  }, [enqueueSnackbar, product._id]); // Adding dependencies to useCallback
+
   useEffect(() => {
-    fetchReviews();
-  }, []);
+    fetchReviews(); // Fetch reviews when the component is mounted
+  }, [fetchReviews]); // Now fetchReviews is a stable reference
 
   if (!product) {
     return <div>Product Not Found</div>;
@@ -96,15 +98,7 @@ export default function ProductScreen(props) {
       </div>
       <Grid container spacing={1}>
         <Grid item md={6} xs={12}>
-          {/* <Image
-            src={product.image}
-            alt={product.name}
-            width={640}
-            height={640}
-            layout="responsive"
-          ></Image> */}
           <Slider>
-
           </Slider>
         </Grid>
         <Grid item md={3} xs={12}>

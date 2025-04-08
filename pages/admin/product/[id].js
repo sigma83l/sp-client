@@ -99,7 +99,8 @@ function ProductEdit({ params }) {
       };
       fetchData();
     }
-  }, []);
+  }, [productId, router, setValue, userInfo]); // Added all dependencies
+  
   const uploadHandler = async (e, imageField = 'image') => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();

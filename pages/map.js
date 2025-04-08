@@ -33,35 +33,34 @@ function Map() {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         setGoogleApiKey(data);
-        getUserCurrentLocation();
+  
+        if (!navigator.geolocation) {
+          enqueueSnackbar('Geolocation is not supported by this browser', {
+            variant: 'error',
+          });
+        } else {
+          navigator.geolocation.getCurrentPosition((position) => {
+            setCenter({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            });
+            setLocation({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            });
+          });
+        }
       } catch (err) {
         enqueueSnackbar(getError(err), { variant: 'error' });
       }
     };
+  
     fetchGoogleApiKey();
-  }, []);
+  }, [enqueueSnackbar, userInfo.token]);
+  
 
   const [center, setCenter] = useState(defaultLocation);
   const [location, setLocation] = useState(center);
-
-  const getUserCurrentLocation = () => {
-    if (!navigator.geolocation) {
-      enqueueSnackbar('Geolocation is not supported by this browser', {
-        variant: 'error',
-      });
-    } else {
-      navigator.geolocation.getCurrentPosition((position) => {
-        setCenter({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-        setLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-      });
-    }
-  };
 
   const mapRef = useRef(null);
   const placeRef = useRef(null);

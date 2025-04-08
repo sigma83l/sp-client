@@ -9,6 +9,7 @@ export default function MediaCard() {
      <div className={styles.content}>
       <Image
         className={styles.transition}
+        alt="wdw"
         // component="img"
         src="../public/images/banner1.jpg"
         // title={service.name}
