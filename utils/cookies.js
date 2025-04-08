@@ -1,4 +1,4 @@
-import cookie from 'cookie';
+import cookie from 'js-cookie';
 
 /**
  * Function to parse cookies from the request headers
