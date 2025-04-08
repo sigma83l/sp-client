@@ -2,12 +2,6 @@
   "name": "next-amazona",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
-    "lint": "next lint"
-  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -35,12 +29,16 @@
     "react-hook-form": "^7.11.0",
     "react-icons": "^5.5.0",
     "react-material-ui-carousel": "^2.2.7",
-    "streamifier": "^0.1.1",
-    "webpack": "^5.98.0"
+    "streamifier": "^0.1.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   }
 }
