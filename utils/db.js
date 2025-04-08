@@ -1,5 +1,18 @@
 import mongoose from 'mongoose';
 
+// Function to encode the username and password
+const encodeCredentials = (username, password) => {
+  const encodedUsername = encodeURIComponent(username);
+  const encodedPassword = encodeURIComponent(password);
+  return { encodedUsername, encodedPassword };
+};
+
+// MongoDB credentials
+const { encodedUsername, encodedPassword } = encodeCredentials('hamedsedaghatgit83', 'Hitlerwashero2050');
+
+// The MongoDB URI with encoded credentials
+const MONGO_URI = `mongodb+srv://${encodedUsername}:${encodedPassword}@cluster0.kpry90i.mongodb.net/?retryWrites=true&w=majority`;
+
 const connection = {};
 
 async function connect() {
@@ -15,7 +28,7 @@ async function connect() {
     }
     await mongoose.disconnect();
   }
-  const db = await mongoose.connect(process.env.MONGODB_URI, {
+  const db = await mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
