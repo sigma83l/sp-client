@@ -24,7 +24,6 @@ import Layout from '../components/Layout'
 import { Grid } from '@material-ui/core'
 import ButtonM from '../components/button'
 import styles from '../styles/Home.module.css';
-import {Image} from "next/image";
 
 
 function aboutus() {
@@ -35,18 +34,16 @@ function aboutus() {
       <Grid sm={6} xs={12} >
                    <div className={styles.square}>
                       <div className={styles.content}>
-                        <Image
-                          className={styles.transition}
-                          alt="dw"
-                          src={'/images/abus.webp'}
-                          // title={service.name}
-                          style={{ 
-                            width: '100%', 
-                            height: '100%',
-                            borderRadius: 20,
-
-                            // backgroundColor:'transparent',
-                          }}></Image>
+                      <img
+                        className={styles.transition}
+                        alt="dw"
+                        src='/images/abus.webp'
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: 20,
+                        }}
+                      />
                       </div>
                     </div>
         {/* <Card>
