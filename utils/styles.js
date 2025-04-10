@@ -29,8 +29,9 @@ const useStyles = makeStyles((theme) => ({
     margin: 20,
     marginTop: 50,
     marginBottom: 50,
-
+    borderTop:"3px solid orange",
     textAlign: 'center',
+    paddingTop:"1rem",
   },
   section: {
     marginTop: 10,
