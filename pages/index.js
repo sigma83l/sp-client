@@ -138,21 +138,21 @@ export default function Home(props) {
          marginBottom:"4rem",
         }}
         >
-        <Grid xs={6} md={3}
+        // <Grid xs={6} md={3}
            
-           >
-          <FaShippingFast 
-           size={30} 
-           style={{
-             color:"#FF730E",
-           }}
-          />
-        <Typography style={{fontWeight:"800"}}>
-           Free Shipping
-        </Typography>
-           Free Shipping On All Order
-        </Grid>
-        <Grid xs={6} md={3}>
+        //    >
+        //   <FaShippingFast 
+        //    size={30} 
+        //    style={{
+        //      color:"#FF730E",
+        //    }}
+        //   />
+        // <Typography style={{fontWeight:"800"}}>
+        //    Free Shipping
+        // </Typography>
+        //    Free Shipping On All Order
+        // </Grid>
+        <Grid xs={6} md={4}>
           <SiTicktick
                       size={30} 
                       style={{
@@ -164,7 +164,7 @@ export default function Home(props) {
           </Typography>
            30 Day Money Back
         </Grid>
-        <Grid xs={6} md={3}>
+        <Grid xs={6} md={4}>
           <FaHeadset
             size={30} 
             style={{
@@ -176,7 +176,7 @@ export default function Home(props) {
           </Typography>
            Technical Support 24/7
         </Grid>
-        <Grid xs={6} md={3}>
+        <Grid xs={6} md={4}>
           <IoWallet
                       size={30} 
                       style={{
