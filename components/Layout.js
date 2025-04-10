@@ -453,9 +453,11 @@ export default function Layout({ title, description, children }, ) {
 
               <NextLink href="/aboutus" passHref>
                <Link>
-                 <Typography>
+                 <IconButton
+                      className={classes.iconButton}
+                 >
                     About
-                 </Typography>
+                 </IconButton>
                </Link>
               </NextLink> 
 
@@ -488,9 +490,11 @@ export default function Layout({ title, description, children }, ) {
   
           <NextLink href='/contactus' passHref>
            <Link>
-            <Typography>
+            <IconButton
+                      className={classes.iconButton}         
+            >
                Contacts
-            </Typography> 
+            </IconButton> 
            </Link>  
           </NextLink>
 
