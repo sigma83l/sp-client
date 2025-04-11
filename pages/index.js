@@ -138,20 +138,20 @@ export default function Home(props) {
          marginBottom:"4rem",
         }}
         >
-        // <Grid xs={6} md={3}
+        {/* <Grid xs={6} md={3}
            
-        //    >
-        //   <FaShippingFast 
-        //    size={30} 
-        //    style={{
-        //      color:"#FF730E",
-        //    }}
-        //   />
-        // <Typography style={{fontWeight:"800"}}>
-        //    Free Shipping
-        // </Typography>
-        //    Free Shipping On All Order
-        // </Grid>
+           >
+          <FaShippingFast 
+           size={30} 
+           style={{
+             color:"#FF730E",
+           }}
+          />
+        <Typography style={{fontWeight:"800"}}>
+           Free Shipping
+        </Typography>
+           Free Shipping On All Order
+        </Grid> */}
         <Grid xs={6} md={4}>
           <SiTicktick
                       size={30} 
