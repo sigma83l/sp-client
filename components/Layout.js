@@ -99,8 +99,16 @@ export default function Layout({ title, description, children }, ) {
   };
 
   useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/categories`);
+        setCategories(data);
+      } catch (err) {
+        enqueueSnackbar(getError(err), { variant: 'error' });
+      }
+    };
     fetchCategories();
-  }, [fetchCategories]);
+  }, []);
 
   // const darkModeChangeHandler = () => {
   //   dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
