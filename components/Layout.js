@@ -108,7 +108,7 @@ export default function Layout({ title, description, children }, ) {
       }
     };
     fetchCategories();
-  }, []);
+  }, [enqueueSnackbar]);
 
   // const darkModeChangeHandler = () => {
   //   dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
