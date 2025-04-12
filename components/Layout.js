@@ -80,14 +80,14 @@ export default function Layout({ title, description, children }, ) {
   const [, setCategories] = useState([]);
   const { enqueueSnackbar } = useSnackbar();
 
-  const fetchCategories = async () => {
-    try {
-      const { data } = await axios.get(`/api/products/categories`);
-      setCategories(data);
-    } catch (err) {
-      enqueueSnackbar(getError(err), { variant: 'error' });
-    }
-  };
+  // const fetchCategories = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/api/products/categories`);
+  //     setCategories(data);
+  //   } catch (err) {
+  //     enqueueSnackbar(getError(err), { variant: 'error' });
+  //   }
+  // };
 
   const [query, setQuery] = useState('');
   const queryChangeHandler = (e) => {

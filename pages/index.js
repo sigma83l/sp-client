@@ -394,22 +394,21 @@ export default function Home(props) {
 
 export async function getServerSideProps() {
   await db.connect();
-  const featuredProductsDocs = await Product.find(
-    { isFeatured: true },
-    '-reviews'
-  )
-    .lean()
-    .limit(3);
+
+  // Fetch and parse JSON
+  const res = await fetch("http://industrious-miracle-production.up.railway.app/products");
+  const featuredProductsDocs = await res.json();
+  console.log(res);
   const topRatedProductsDocs = await Product.find({}, '-reviews')
     .lean()
-    .sort({
-      rating: -1,
-    })
+    .sort({ rating: -1 })
     .limit(6);
+
   await db.disconnect();
+
   return {
     props: {
-      featuredProducts: featuredProductsDocs.map(db.convertDocToObj),
+      featuredProducts: featuredProductsDocs,
       topRatedProducts: topRatedProductsDocs.map(db.convertDocToObj),
     },
   };
