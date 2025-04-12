@@ -15,7 +15,6 @@ import useStyles from '../utils/styles';
 import styles from '../styles/Home.module.css';
 import Button from '../components/button';
 import { useState } from 'react';
-import { FaShippingFast } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import { FaHeadset } from "react-icons/fa";
 import { IoWallet } from "react-icons/io5";
