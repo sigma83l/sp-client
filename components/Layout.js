@@ -228,7 +228,7 @@ export default function Layout({ title, description, children }, ) {
               <ListItem>  
                <NextLink href='/aboutus' passHref>
                 <Link>  
-                  <Typography > 
+                  <Typography style={{ color:"black"}} > 
                      About us
                   </Typography>
                 </Link>
@@ -238,7 +238,7 @@ export default function Layout({ title, description, children }, ) {
               <ListItem>  
                <NextLink href='/contactus' passHref>
                 <Link>  
-                  <Typography > 
+                  <Typography style={{ color:"black"}} > 
                   Contact us
                   </Typography>
                 </Link>
