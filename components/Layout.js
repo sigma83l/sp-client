@@ -521,10 +521,14 @@ export default function Layout({ title, description, children }, ) {
             <Typography> 
               63FJ+QUX, Terelay Industrial Estate, Bo. Pittland, Provincial Rd, Cabuyao, Laguna, Philippines
             </Typography>
+                        
+              <br></br>
 
             <Typography> 
               Email: contact@senocpointofsalemarketing.com     
             </Typography>
+                        
+              <br></br>
 
             <Typography> 
               {/* 63FJ+QUX, Terelay Industrial Estate, Bo. Pittland, Provincial Rd, Cabuyao, Laguna, Philippines */}
@@ -534,6 +538,8 @@ export default function Layout({ title, description, children }, ) {
               Phone: +63 920 142 7892            
             </Typography> 
                 
+                <br></br>
+
             <Typography> 
               {/* 63FJ+QUX, Terelay Industrial Estate, Bo. Pittland, Provincial Rd, Cabuyao, Laguna, Philippines */}
               
