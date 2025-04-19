@@ -16,7 +16,8 @@ import styles from '../styles/Home.module.css';
 import Button from '../components/button';
 import { useState } from 'react';
 import { SiTicktick } from "react-icons/si";
-import { FaHeadset } from "react-icons/fa";
+import { FaHeadset, FaShippingFast } from "react-icons/fa";
+
 import { IoWallet } from "react-icons/io5";
 
 
@@ -137,7 +138,7 @@ export default function Home(props) {
          marginBottom:"4rem",
         }}
         >
-        {/* <Grid xs={6} md={3}
+        <Grid xs={6} md={3}
            
            >
           <FaShippingFast 
@@ -150,8 +151,8 @@ export default function Home(props) {
            Free Shipping
         </Typography>
            Free Shipping On All Order
-        </Grid> */}
-        <Grid xs={6} md={4}>
+        </Grid>
+        <Grid xs={6} md={3}>
           <SiTicktick
                       size={30} 
                       style={{
@@ -163,7 +164,7 @@ export default function Home(props) {
           </Typography>
            30 Day Money Back
         </Grid>
-        <Grid xs={6} md={4}>
+        <Grid xs={6} md={3}>
           <FaHeadset
             size={30} 
             style={{
@@ -175,7 +176,7 @@ export default function Home(props) {
           </Typography>
            Technical Support 24/7
         </Grid>
-        <Grid xs={6} md={4}>
+        <Grid xs={6} md={3}>
           <IoWallet
                       size={30} 
                       style={{

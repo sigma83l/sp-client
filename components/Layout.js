@@ -189,7 +189,11 @@ export default function Layout({ title, description, children }, ) {
               onClose={sidebarCloseHandler}
               style={{color:"black"}}
             >
-              <List>
+              <List
+                            style={{
+                                width:"150px" 
+                             }}
+              >
                 <ListItem>
                   <Box
                     display="flex"
@@ -224,7 +228,7 @@ export default function Layout({ title, description, children }, ) {
               <ListItem>  
                <NextLink href='/aboutus' passHref>
                 <Link>  
-                  <Typography > 
+                  <Typography style={{ color:"black"}} > 
                      About us
                   </Typography>
                 </Link>
@@ -234,7 +238,7 @@ export default function Layout({ title, description, children }, ) {
               <ListItem>  
                <NextLink href='/contactus' passHref>
                 <Link>  
-                  <Typography > 
+                  <Typography style={{ color:"black"}} > 
                   Contact us
                   </Typography>
                 </Link>
@@ -453,9 +457,11 @@ export default function Layout({ title, description, children }, ) {
 
               <NextLink href="/" passHref>
                <Link>
-                <Typography>
-                   Home
-                </Typography>
+                 <IconButton
+                      className={classes.iconButton}
+                 >
+                    Home
+                 </IconButton>
                </Link>
               </NextLink>
 
@@ -513,12 +519,31 @@ export default function Layout({ title, description, children }, ) {
               Contact 
             </Typography> 
             <Typography> 
+              63FJ+QUX, Terelay Industrial Estate, Bo. Pittland, Provincial Rd, Cabuyao, Laguna, Philippines
+            </Typography>
+                        
+              <br></br>
+
+            <Typography> 
+              Email: contact@senocpointofsalemarketing.com     
+            </Typography>
+                        
+              <br></br>
+
+            <Typography> 
               {/* 63FJ+QUX, Terelay Industrial Estate, Bo. Pittland, Provincial Rd, Cabuyao, Laguna, Philippines */}
               
               {/* Email: contact@senocpointofsalemarketing.com */}
               
-              Phone: +63 920 142 7892
+              Phone: +63 920 142 7892            
+            </Typography> 
+                
+                <br></br>
+
+            <Typography> 
+              {/* 63FJ+QUX, Terelay Industrial Estate, Bo. Pittland, Provincial Rd, Cabuyao, Laguna, Philippines */}
               
+              {/* Email: contact@senocpointofsalemarketing.com */}              
               Business hours:
               Mondays to Fridays (9:00 am to 6:00pm) Saturday (9:00 am to 3:00pm) Sundays (non-working day)
            
